@@ -1,11 +1,14 @@
+from time import sleep
+
+
 def linha():
     linha1 = '~' * 30
-    print(colored_text(linha1, 'red'))
+    print(colored_text(linha1, 'cyan'))
 
 
 def inicio():
     linha()
-    print(colored_text('BANCO ONLINE'.center(30), 'red'))
+    print(colored_text('BANCO ONLINE'.center(30), 'cyan'))
     linha()
     return inicio
 
@@ -32,4 +35,29 @@ def Menu():
         [1] Sacar
         [2] Depositar
         [3] Empréstimo 
-''', 'red'))
+''', 'cyan'))
+    
+
+def entrada():
+        while True:
+            print('Seu login devera ter 8 números')
+            fazerlogin = input('Digite um login: ')
+            qnt_login = len(fazerlogin)
+            if qnt_login < 8 or not fazerlogin.isdigit():
+                print('Login invalido, o login deve conter 8 números')
+                continue
+            print('Login criado com sucesso')
+            break
+            
+        sleep(1.5)
+
+        while True:
+            print('Sua senha deve conter 8 números')
+            fazersenha = input('Digite uma senha: ')
+            qnt_senha = len(fazersenha)
+            if qnt_senha < 8 or not fazersenha.isdigit():
+                print('Senha invalida, a senha deve conter 8 números')
+                continue
+            print('Obrigado por criar sua conta.')
+            break
+        
